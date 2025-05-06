@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мега Крестики-Нолики</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-wrapper">
+        <div class="game-container">
+            <div class="header">
+                <h1>Мега Крестики-Нолики</h1>
+                <button id="help-button" class="help-button" title="Правила игры">?</button>
+            </div>
+            <div class="game-info">
+                <div id="status" class="status">Ход игрока: X</div>
+                <div id="current-timer" class="timer">Время хода: 0с</div>
+            </div>
+            <div id="board" class="board">
+                <!-- Большие клетки (0-8) -->
+            </div>
+            <button id="restart" class="restart-button">Начать сначала</button>
+        </div>
+        
+        <div class="timers-panel">
+            <div class="timer-block">
+                <div class="timer-label">Игрок X</div>
+                <div id="x-timer" class="total-timer">0с</div>
+            </div>
+            <div class="timer-block">
+                <div class="timer-label">Игрок O</div>
+                <div id="o-timer" class="total-timer">0с</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно с правилами -->
+    <div id="rules-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Правила игры</h2>
+                <button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>Как играть в Мега Крестики-Нолики:</h3>
+                <ol>
+                    <li>Игровое поле состоит из 9 больших клеток, каждая из которых содержит свою мини-игру в крестики-нолики.</li>
+                    <li>Игроки ходят по очереди. Первый ход делает игрок X.</li>
+                    <li>Первый ход можно сделать в любую маленькую клетку любого большого поля.</li>
+                    <li>Важное правило: положение вашего хода в маленьком поле определяет, в каком большом поле должен ходить следующий игрок.</li>
+                    <li>Например: если вы поставили X в верхний правый угол маленького поля, то следующий игрок должен ходить в верхнее правое большое поле.</li>
+                    <li>Если следующий игрок должен ходить в уже выигранное поле или поле с ничьей, он может выбрать любое доступное большое поле.</li>
+                    <li>Чтобы выиграть большое поле, нужно выиграть три маленькие клетки в ряд (по горизонтали, вертикали или диагонали).</li>
+                    <li>Чтобы победить в игре, нужно выиграть три больших поля в ряд.</li>
+                </ol>
+                <div class="tips">
+                    <h3>Подсказки:</h3>
+                    <ul>
+                        <li>Активное поле подсвечивается красной рамкой</li>
+                        <li>В статусе игры указывается, в какое поле нужно ходить</li>
+                        <li>Выигранные поля отмечаются большим символом</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="victory-screen" class="victory-screen">
+        <div class="victory-content">
+            <h2 class="victory-text">Победа!</h2>
+            <div class="confetti"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
